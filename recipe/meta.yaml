@@ -18,6 +18,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
+    - wget
+    - tar
 
 test:
   commands:
