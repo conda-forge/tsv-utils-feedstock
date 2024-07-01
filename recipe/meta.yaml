@@ -10,7 +10,7 @@ source:
     sha256: 07c8a62962f9bb624f402281ccb3c571509d4bc48f8fdc5a1d056775bc764e9a
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
@@ -19,9 +19,9 @@ requirements:
     - {{ stdlib('c') }}
     - make
   host:
-    - ldc  # [osx-64 or linux-64]
+    - ldc  # [linux-64 or osx-64]
   run:
-    - ldc  # [linux-64]
+    - {{ pin_compatible('ldc', min_pin='x.x', max_pin='x.x') }}  # [linux-64 or osx-64]
 
 test:
   commands:
