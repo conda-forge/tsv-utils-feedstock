@@ -1,7 +1,7 @@
-ldc:
+ldc:  # [linux-64]
   - 1.38  # [linux-64]
   - 1.28  # [linux-64]
   - 1.20  # [linux-64]
   - 1.13  # [linux-64]
-pin_run_as_build:
+pin_run_as_build: # [linux-64]
   - ldc: x.x  # [linux-64]
