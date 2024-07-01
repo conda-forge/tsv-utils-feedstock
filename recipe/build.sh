@@ -2,7 +2,7 @@
 
 set -x
 
-DFLAGS="-L-L${PREFIX}/lib -static"
+DFLAGS="-L-L${PREFIX}/lib -L-Wl,-rpath,${PREFIX}/lib -static"
 if [[ "$target_platform" == "osx-64" ]]; then
     export DFLAGS=""
 fi

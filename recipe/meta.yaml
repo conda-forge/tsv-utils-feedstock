@@ -19,9 +19,7 @@ requirements:
     - {{ stdlib('c') }}
     - make
   host:
-    - ldc
-  run:
-    - ldc # [not osx]
+    - ldc  # [osx-64 or linux-64]
 
 test:
   commands:
