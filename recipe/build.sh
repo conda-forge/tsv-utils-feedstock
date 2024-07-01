@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LDC_VERSION=1.38.0
+LDC_VERSION=1.32.0
 
 set -x
 
