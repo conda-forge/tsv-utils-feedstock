@@ -18,8 +18,6 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
-  host:
-    - ldc  # [linux-64 or osx-64]
 
 test:
   commands:
