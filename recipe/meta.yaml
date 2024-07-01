@@ -21,7 +21,7 @@ requirements:
   host:
     - ldc  # [osx-64 or linux-64]
   run:
-    - ldc  # [linux-64]
+    - {{ pin_compatible('ldc', min_pin='x.x', max_pin='x.x') }}  # [linux-64]
 
 test:
   commands:
