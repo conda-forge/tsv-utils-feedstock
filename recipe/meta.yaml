@@ -20,6 +20,8 @@ requirements:
     - make
   host:
     - ldc  # [osx-64 or linux-64]
+  run:
+    - ldc  # [linux-64]
 
 test:
   commands:
