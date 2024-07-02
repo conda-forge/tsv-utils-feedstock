@@ -20,6 +20,9 @@ requirements:
     - make
     - ldc
     - wget  # [osx and arm64]
+  host:
+    - {{ compiler('c') }}
+    - {{ stdlib('c') }}
 
 test:
   commands:

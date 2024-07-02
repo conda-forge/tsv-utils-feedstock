@@ -34,13 +34,13 @@ if [[ "$target_platform" == "osx-arm64" ]]; then
                 "-L-dead_strip",
                 "-L-no_implicit_dylibs",
                 "-L-no_compact_unwind",
+                "-L-v",
 
             ];
             lib-dirs = [
                 "$BUILD_PREFIX/lib-arm64",
-                "$BUILD_PREFIX/lib",
             ];
-            rpath = "$BUILD_PREFIX/lib-arm64:$BUILD_PREFIX/lib";
+            rpath = "$BUILD_PREFIX/lib-arm64";
         };
 EOF
 
