@@ -18,6 +18,8 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
+  host:
+    - ldc  # [not osx-arm64]
 
 test:
   commands:
