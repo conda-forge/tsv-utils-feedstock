@@ -11,7 +11,7 @@ if [[ "$target_platform" == "osx-arm64" ]]; then
     wget https://github.com/ldc-developers/ldc/releases/download/v$LDC_VERSION/ldc2-$LDC_VERSION-$LDC_ARCH.tar.xz
     tar -xf ldc2-$LDC_VERSION-$LDC_ARCH.tar.xz
     mkdir "$BUILD_PREFIX"/lib-arm64
-    cp -r ldc2-$LDC_VERSION-$LDC_ARCH/lib "$BUILD_PREFIX"/lib-arm64
+    mv ldc2-$LDC_VERSION-$LDC_ARCH/lib "$BUILD_PREFIX"/lib-arm64
 
     MTRIPLE="-mtriple=arm64-apple-macosx11"
 
@@ -27,8 +27,6 @@ if [[ "$target_platform" == "osx-arm64" ]]; then
                 "-Xcc=-isysroot",
                 "-Xcc=$CONDA_BUILD_SYSROOT",
                 "-Xcc=-mmacosx-version-min=11",
-                "-L-macos_version_min",
-                "-L11.0",
                 "-Xcc=-fno-autolink",
                 "-L-arch",
                 "-Larm64",
@@ -39,9 +37,10 @@ if [[ "$target_platform" == "osx-arm64" ]]; then
 
             ];
             lib-dirs = [
-                "%%ldcbinarypath%%/../lib-arm64",
+                "$BUILD_PREFIX/lib-arm64",
+                "$BUILD_PREFIX/lib",
             ];
-            rpath = "%%ldcbinarypath%%/../lib-arm64";
+            rpath = "$BUILD_PREFIX/lib-arm64:$BUILD_PREFIX/lib";
         };
 EOF
 
