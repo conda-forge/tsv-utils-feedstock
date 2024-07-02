@@ -10,7 +10,6 @@ if [[ "$target_platform" == "osx-arm64" ]]; then
     LDC_ARCH=osx-arm64
     wget https://github.com/ldc-developers/ldc/releases/download/v$LDC_VERSION/ldc2-$LDC_VERSION-$LDC_ARCH.tar.xz
     tar -xf ldc2-$LDC_VERSION-$LDC_ARCH.tar.xz
-    mkdir "$BUILD_PREFIX"/lib-arm64
     mv ldc2-$LDC_VERSION-$LDC_ARCH/lib "$BUILD_PREFIX"/lib-arm64
 
     MTRIPLE="-mtriple=arm64-apple-macosx11"
