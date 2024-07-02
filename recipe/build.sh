@@ -22,19 +22,9 @@ if [[ "$target_platform" == "osx-arm64" ]]; then
                 "-defaultlib=phobos2-ldc,druntime-ldc",
                 "-Xcc=-arch",
                 "-Xcc=arm64",
-                "-mtriple=arm64-apple-macosx11"
                 "-Xcc=-isysroot",
                 "-Xcc=$CONDA_BUILD_SYSROOT",
-                "-Xcc=-mmacosx-version-min=11",
-                "-Xcc=-fno-autolink",
-                "-L-arch",
-                "-Larm64",
-                "-L-no_objc_category_merging",
-                "-L-dead_strip",
-                "-L-no_implicit_dylibs",
-                "-L-no_compact_unwind",
                 "-L-v",
-
             ];
             lib-dirs = [
                 "$BUILD_PREFIX/lib-arm64",
