@@ -3,6 +3,13 @@
 set -euxo pipefail
 
 MTRIPLE=""
+OSX_FLAGS=""
+
+# if target platform starts with osx
+if [[ "$target_platform" == osx-* ]]; then
+    MTRIPLE="-mtriple=x86_64-apple-macosx10.9"
+    OSX_FLAGS="-Wl,-headerpad_max_install_names"
+fi
 
 if [[ "$target_platform" == "osx-arm64" ]]; then
     # Get the arm64 lib files
@@ -36,6 +43,6 @@ EOF
 
 fi
 
-make DCOMPILER=ldc2 DFLAGS="-link-defaultlib-shared=false $MTRIPLE"
+make DCOMPILER=ldc2 DFLAGS="-link-defaultlib-shared=false $MTRIPLE $OSX_FLAGS"
 
 cp -r bin "$PREFIX"
