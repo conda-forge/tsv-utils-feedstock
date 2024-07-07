@@ -14,7 +14,7 @@ fi
 if [[ "$target_platform" == "osx-arm64" ]]; then
     # Get the arm64 lib files
     # Ideally, we would get these from the conda-forge ldc2 arm64 package, but it is not available yet
-    latest_version=$(curl -s https://api.github.com/repos/ldc-developer/ldc/releases/latest | jq -r .tag_name | sed 's/^v//')
+    latest_version=$(curl -s https://api.github.com/repos/ldc-developers/ldc/releases/latest | jq -r .tag_name | sed 's/^v//')
     LDC_VERSION=latest_version
     LDC_ARCH=osx-arm64
     wget https://github.com/ldc-developers/ldc/releases/download/v$LDC_VERSION/ldc2-$LDC_VERSION-$LDC_ARCH.tar.xz
