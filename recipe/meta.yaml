@@ -12,6 +12,8 @@ source:
 build:
   number: 7
   skip: true  # [win]
+  ignore_run_exports:
+    - ldc
 
 requirements:
   build:
