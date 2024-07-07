@@ -8,7 +8,7 @@ OSX_FLAGS=""
 # if target platform starts with osx
 if [[ "$target_platform" == osx-* ]]; then
     MTRIPLE="-mtriple=x86_64-apple-macosx10.9"
-    OSX_FLAGS="-Wl,-headerpad_max_install_names"
+    OSX_FLAGS="-L-Wl,-headerpad_max_install_names"
 fi
 
 if [[ "$target_platform" == "osx-arm64" ]]; then
