@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
-    - ldc <=1.29
+    - ldc
     - wget  # [osx and arm64]
 
 test:
