@@ -10,7 +10,7 @@ source:
     sha256: 07c8a62962f9bb624f402281ccb3c571509d4bc48f8fdc5a1d056775bc764e9a
 
 build:
-  number: 7
+  number: 8
   skip: true  # [win]
   ignore_run_exports:
     - ldc
@@ -20,7 +20,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib('c') }}
     - make
-    - ldc
+    - ldc <1.29
     - wget  # [osx and arm64]
 
 test:
